@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { Typography,Box } from '@material-ui/core';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div>
+      <Typography variant="h5">HEllo</Typography>
+      <Box width={300}> 
+        <h1>Get Start</h1>
+        <p>Lorem odapg9tuh thujtehujb9tb9rerhthrthtrh trhth htghth dgbvdfuybvryfghuier
+          fbuhuidfhbudehbuih gjgvedhguyvbeh ryeguidr
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </Box>
+     
     </div>
   );
 }
