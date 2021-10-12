@@ -1,11 +1,26 @@
 
 import './App.css';
-import { Typography,Box,Button,Paper, Container, Grid, TextField,InputAdornment} from '@material-ui/core';
+import { Typography,Box,Button,Paper, Container, Grid, TextField,InputAdornment, Radio, FormControl, FormLabel, RadioGroup, FormControlLabel, Checkbox} from '@material-ui/core';
 import { orange } from '@material-ui/core/colors';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { useState } from 'react';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { FavoriteIcon } from '@material-ui/icons/Favorite';
 function App() {
+
+  const [gender,setGender]=useState("");
+  const [remember,setRemember]=useState(false);
+
+  const genderChange=e=>{
+    setGender(e.target.value);
+  }
+
+  const handleChange=e=>{
+    setRemember(e.target.checked);
+  }
   
   return (
+   
     <>
       <Container maxWidth="sm">
         <Paper variant="outlined">
@@ -129,6 +144,42 @@ function App() {
           </Box>
         </Paper>
       </Container>
+      
+      <br></br>
+      <br></br>
+      <Paper component={Box} width="30%"  p={4} mx="auto">
+        <Box component="form">
+          <FormControl>
+         
+
+         <FormLabel>
+           Choo se Your Gender
+         </FormLabel>
+       <RadioGroup value={gender} onChange={genderChange} row >
+         <FormControlLabel label="Male" control={<Radio></Radio>} value="male"/>
+         <FormControlLabel label="Female" control={<Radio color="primary"></Radio>} value="female"/>
+         <FormControlLabel label="Other" control={<Radio></Radio>} value="other"/>
+           
+         
+
+         
+       </RadioGroup>
+        
+       <FormControlLabel label="Remenber ME" 
+       control={<Checkbox 
+         icon={<FavoriteBorderIcon/>}
+          checkedIcon={<FavoriteIcon/>}
+          onChange={handleChange}
+          checked={remember}
+         
+></Checkbox>}>
+
+         </FormControlLabel>
+
+
+          </FormControl>
+        </Box>
+      </Paper>
 
     </>
 
